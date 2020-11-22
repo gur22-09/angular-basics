@@ -1,0 +1,10 @@
+.btn {
+    display: block;
+    width: auto;
+    margin: 10px;
+}
+
+.white {
+    background-color: blue;
+    color: white;
+}

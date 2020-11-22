@@ -1,0 +1,25 @@
+<!-- <input type="text" class="form-control"  (input)="onChangeServerName($event)"> this is one way data binding -->
+
+<input type="text" class="form-control" [(ngModel)]="userName">
+<p>{{userName}}</p>
+<button class="btn btn-primary" [disabled]="userName == '' ? true : false " (click)="onChangeUser()">Add</button>
+<input type="text" class="form-control" [(ngModel)]="serverName">
+<button class="btn btn-primary" 
+ [disabled]="!allowServerAdd"
+ (click)="onCreateServer()"
+ title="Add Server"
+ >
+    Add Server
+</button>
+<p *ngIf="serverCreated">{{ serverCreationStatus }}</p>
+<!-- <ng-template #noServer>
+    <p>No server created</p>
+</ng-template> -->
+<button class="btn btn-secondary" (click)="toggleSecret()">
+    Show secret
+</button>
+<p *ngIf="!hideSecret" [ngClass]="{
+    white: buttonLogs.length >= 5
+}">I might die soon</p>
+<app-server></app-server>
+<app-server></app-server>
